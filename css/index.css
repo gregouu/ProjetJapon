@@ -1,0 +1,89 @@
+:root {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #eee;
+  display: -webkit-box;
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  -webkit-box-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+          align-items: center;
+}
+
+.grid-container {
+  width: 100%;
+}
+
+.card {
+  border-radius: 1em;
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.125);
+  text-align: center;
+}
+.card header {
+  position: relative;
+  height: 0;
+  padding-bottom: 41.84%;
+  display: -webkit-box;
+  display: flex;
+}
+.card header .header-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.card header .avatar {
+  position: absolute;
+  width: 6em;
+  height: 6em;
+  border-radius: 50%;
+  overflow: hidden;
+  top: 100%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
+}
+.card .card-section {
+  padding-top: 4em;
+}
+.card .card-section .username {
+  font-family: 'Roboto', sans-serif;
+}
+.card footer {
+  background: #f6f6f6;
+  padding: 1em;
+}
+.card footer ul {
+  display: -webkit-box;
+  display: flex;
+  margin: 0;
+  list-style: none;
+  -webkit-box-pack: center;
+          justify-content: center;
+}
+.card footer ul li a {
+  color: #444;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+  padding: 0.5em;
+  font-size: 1.125rem;
+}
+.card footer ul li a:hover, .card footer ul li a:focus {
+  color: #0a0a0a;
+}
