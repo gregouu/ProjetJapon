@@ -1,7 +1,9 @@
 <?php include 'include/head.php';?>
 
-<section class="grid-container">
-  <div class="grid-x align-center">
+
+<br><br>
+<br><br>
+
     <div class="cell card medium-4">
       <header>
         <img src="images/totoro.jpg" alt="" class="header-img" />
@@ -35,8 +37,11 @@
         </ul>
       </footer>
     </div>
-  </div>
-</section>
+
+
+
+
+<?php include 'include/footer.php';?>
 
 <script>
     $(document).ready(function() {
@@ -45,6 +50,8 @@
     $("ul li").toggleClass("hide");
   });
 });
+
+
 </script>
 </body>
 </html>

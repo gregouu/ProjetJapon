@@ -1,35 +1,26 @@
-:root {
-  font-size: 14px;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
-  background: #eee;
-  display: -webkit-box;
-  display: flex;
-  width: 100vw;
-  height: 100vh;
-  -webkit-box-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-          align-items: center;
+  background-image: url(../images/fond.png);
+    background-size: cover;
+    backface-visibility: 50%;
+
 }
 
 .grid-container {
-  width: 100%;
+  width: 60%;
+  float: left!important;
+
 }
 
+.align-center{
+    justify-content: left;
+}
 .card {
   border-radius: 1em;
-  box-shadow: 0 0 2em rgba(0, 0, 0, 0.125);
   text-align: center;
+  box-shadow: 1px 1px 12px #555;
+  width: 20%;
+  margin: 15px;
+
 }
 .card header {
   position: relative;
@@ -87,3 +78,5 @@ body {
 .card footer ul li a:hover, .card footer ul li a:focus {
   color: #0a0a0a;
 }
+
+
