@@ -1,3 +1,9 @@
+<?php
+session_start ();
+;?>
+
+
+
 <!DOCTYPE html>
 <html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -15,14 +21,12 @@
     <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--la loupe-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/index.css">
     <title>THE artist's</title>
     <script type="text/javascript">
     //<!--
@@ -37,25 +41,17 @@
 
 <a id="button"></a>
 
-<?php include'include/header.php';?>
+<?php include'../include/header_membre.php';?>
 
-<div class="container">
-    <div class="row">
-        <div class="quote col-4">
-          <span class="left">❝</span>
-          <blockquote>
-            Dans chaque enfant il y a un artiste. <br>
-            Le problème est de savoir comment rester un artiste en grandissant.
-          </blockquote>
-          <small>Pablo Picasso</small>
-          <span class="right">❞</span>
-        </div>
-        <div class="col-4"></div>
-        <div class="col-4"></div>
-
-    </div>
+<div class="quote">
+  <span class="left">❝</span>
+  <blockquote>
+    Dans chaque enfant il y a un artiste. <br>
+    Le problème est de savoir comment rester un artiste en grandissant.
+  </blockquote>
+  <small>Pablo Picasso</small>
+  <span class="right">❞</span>
 </div>
-
 
 
 <script>

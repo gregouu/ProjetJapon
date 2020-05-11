@@ -1,6 +1,26 @@
+<?php
+session_start ();
+;?>
+
+
+
 <?php // Connexion à la base de données
 $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION)); ?>
 
+
+<?php // Connexion à la base de données
+  // Si le formulaire est envoyé
+  if($_POST) {
+    // Requêtes SQL pour modifier les informations d'une ligne en base
+    $result = $pdo->prepare('UPDATE profile SET nom = :nom, description = :description, photo = :photo WHERE id = :id');
+    $result->execute(array(
+          'nom' => $_POST['nom'],
+          'description' => $_POST['description'],
+          'photo' => $_POST['photo'],
+          'id' => $_POST['id']
+    ));
+  } 
+?>
 
 <!DOCTYPE html>
 <html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
@@ -20,15 +40,15 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--la loupe-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
-    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link rel="icon" type="image/png" href="../images/favicon.png" />
     
     <script src="https://kit.fontawesome.com/ebfafc2eb8.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="css/header.css">
-    <link rel="stylesheet" href="css/profil.css">
-    <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="../css/header.css">
+    <link rel="stylesheet" href="../css/profil.css">
+    <link rel="stylesheet" href="../css/footer.css">
     
    <title>THE artist's</title>
     <script type="text/javascript">
@@ -42,7 +62,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
 
 <a id="button"></a>
 
-<?php include 'include/header.php';?>
+<?php include '../include/header_membre.php';?>
 
    
    
@@ -92,7 +112,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
                             <br>
                             <p class="description"><?php echo $profile['description']; ?></p>
                             <br>
-                            <a href="comission.php" target="_blank"><div class="com"><p>Commission</p></div></a>
+                            <a href="../membre/comission.php" target="_blank"><div class="com"><p>Commission</p></div></a>
                         </div>
 
 
@@ -107,7 +127,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
                 <div class="card col-3">
                    <div class="centre">
                         <div class="imgBx">
-                            <img src="images/clipart-images-gratuites-libres-de-droits-2-1560x1077-removebg-preview.png" alt="fond">
+                            <img src="../images/clipart-images-gratuites-libres-de-droits-2-1560x1077-removebg-preview.png" alt="fond">
                         </div>
 
                         <div class="contentBx">
@@ -121,6 +141,31 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
 
               
             </div>
+            
+                    <?php } ?>
+            
+                  <?php
+      // Requête SQL qui récupérer l'article dont l'ID a été passé en URL (ex : localhost/article.php?id=3)
+      $result = $pdo->query("SELECT * FROM profile WHERE id = $_GET[id]");
+      // Boucle pour lister les résultats de la requête précédente
+      while($listeArticles = $result->fetch(PDO::FETCH_ASSOC)){ ?>
+        <!-- Formulaire qui reprend les champs et les pré-repli avec les données de la base -->
+        <form method="POST">
+          <!-- Champ caché qui contient l'id de l'article -->
+          <input type="text" name="id" value="<?php echo $listeArticles["id"]; ?>" hidden>
+
+          <label for="title">Nom</label>
+          <input type="text" id="nom" name="nom" value="<?php echo $listeArticles["nom"]; ?>">
+
+          <label for="author">Photo de profile</label>
+          <input type="text" id="author" name="photo" value="<?php echo $listeArticles["photo"]; ?>">
+
+          <label for="content">Contenu</label>
+          <textarea id="content" name="description"><?php echo $listeArticles["description"]; ?></textarea>
+
+          <input type="submit">
+        </form>
+      <?php } ?>
     </div>
 
 
@@ -129,7 +174,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
          
            
           
-<?php } ?> 
+ 
    
    
    
@@ -141,4 +186,4 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
    
    
 
-<?php include 'include/footer.php';?>
+<?php include '../include/footer.php';?>

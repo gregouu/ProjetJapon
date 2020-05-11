@@ -1,82 +1,123 @@
-body {
-  background-image: url(../images/fond.png);
-    background-size: cover;
-    backface-visibility: 50%;
-
-}
-
-.grid-container {
-  width: 60%;
-  float: left!important;
-
-}
-
-.align-center{
-    justify-content: left;
-}
-.card {
-  border-radius: 1em;
+     
+        #button {
+  display: inline-block;
+  background-color: #FF9800;
+  width: 50px;
+  height: 50px;
   text-align: center;
-  box-shadow: 1px 1px 12px #555;
-  width: 20%;
-  margin: 15px;
-
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s, 
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
 }
-.card header {
+#button::after {
+  content: "\f077";
+  font-family: FontAwesome;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+#button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+#button:active {
+  background-color: #555;
+}
+#button.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Styles for the content section */
+
+.content {
+  width: 77%;
+  margin: 50px auto;
+  font-family: 'Merriweather', serif;
+  font-size: 17px;
+  color: #6c767a;
+  line-height: 1.9;
+}
+@media (min-width: 500px) {
+  .content {
+    width: 43%;
+  }
+  #button {
+    margin: 30px;
+  }
+}
+.content h1 {
+  margin-bottom: -10px;
+  color: #03a9f4;
+  line-height: 1.5;
+}
+.content h3 {
+  font-style: italic;
+  color: #96a2a7;
+}
+        
+  body{
+            background-image: url(../images/cover1.jpg);
+            background-size: cover;
+
+        }
+
+        
+.quote{
+  text-align: center;
+  font-size: 2rem;
+  margin: auto;
+  padding: 15px;
+  max-width: 70%;
   position: relative;
-  height: 0;
-  padding-bottom: 41.84%;
-  display: -webkit-box;
-  display: flex;
+  margin-top: 100px;
 }
-.card header .header-img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
-}
-.card header .avatar {
-  position: absolute;
-  width: 6em;
-  height: 6em;
-  border-radius: 50%;
-  overflow: hidden;
-  top: 100%;
-  left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  box-shadow: 0 0 2em rgba(0, 0, 0, 0.5);
-}
-.card .card-section {
-  padding-top: 4em;
-}
-.card .card-section .username {
-  font-family: 'Roboto', sans-serif;
-}
-.card footer {
-  background: #f6f6f6;
-  padding: 1em;
-}
-.card footer ul {
-  display: -webkit-box;
-  display: flex;
-  margin: 0;
-  list-style: none;
-  -webkit-box-pack: center;
-          justify-content: center;
-}
-.card footer ul li a {
-  color: #444;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-  padding: 0.5em;
-  font-size: 1.125rem;
-}
-.card footer ul li a:hover, .card footer ul li a:focus {
-  color: #0a0a0a;
-}
+        
+        blockquote{
+            color: white;
+            text-shadow: 2px 2px 2px black;
+            float: left;
+        }
 
+.left{
+  position: absolute;
+  top: -50px;
+  left: -20px;
+  width: 150px;
+  text-align: left;
+  z-index: 10;
+  font-size: 5rem;
+  color: #336699;
+  line-height: 200px;
+}
+.right{
+  position: absolute;
+  bottom: -50px;
+  right: -20px;
+  width: 150px;
+  text-align: right;
+  z-index: 10;
+  font-size: 5rem;
+  color: #336699;
 
+  line-height: 200px;
+}
+small{
+  font-size: 1.7rem;
+  color: #336699;
+  position: relative;
+  z-index: 20;
+  
+  &:before{
+    content: "\2014 \0020";
+    width: 5px;
+  }
+}

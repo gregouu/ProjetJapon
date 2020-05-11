@@ -1,10 +1,23 @@
-.site-footer
+  
+        
+        
+        
+        
+        
+        .titreFooter{
+            text-shadow: 2px 2px 2px black;
+        }
+
+    
+        .site-footer
 {
-  background-color:black;
   padding:45px 0 20px;
   font-size:15px;
   line-height:24px;
   color:#737373;
+    background: white;
+    opacity: 0.9;
+
 }
 .site-footer hr
 {
@@ -30,7 +43,7 @@
 .site-footer a:hover
 {
   color:#3366cc;
-  text-decoration:none;
+  text-decoration:none!important;
 }
 .footer-links
 {
@@ -72,6 +85,8 @@
 {
   margin:0
 }
+
+
 @media (max-width:991px)
 {
   .site-footer [class^=col-]
@@ -79,6 +94,8 @@
     margin-bottom:30px
   }
 }
+
+
 @media (max-width:767px)
 {
   .site-footer
@@ -90,6 +107,9 @@
     text-align:center
   }
 }
+
+
+
 .social-icons
 {
   padding-left:0;
