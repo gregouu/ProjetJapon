@@ -60,7 +60,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     // Requêtes SQL pour récupérer toutes les lignes d'une table de la base de données
     $result = $pdo->query("SELECT * FROM about");
     // Boucle pour lister les résultats de la requête précédente
-    while($profil = $result->fetch(PDO::FETCH_ASSOC)){ ?>
+    while($about = $result->fetch(PDO::FETCH_ASSOC)){ ?>
         
 
 <ul id="categories" class="clr">
