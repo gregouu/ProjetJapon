@@ -5,3 +5,7 @@
 - Dans mon dossier, il y a les fichier de la page 404, mais pour le moment je n'ai pas compris où mettre le fichier '.htaccess' 
 
 - Le multilingue est pret, je dois juste l'inséré dans les pages
+
+- La séparation des espaces adminet utilisateur. les utilisateurs, pourront eux meme poster et like
+
+-J'ai deja commencer un mini chat avec open classroom, il sera bientot pres
