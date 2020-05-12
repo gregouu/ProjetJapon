@@ -1,3 +1,9 @@
+
+<?php
+session_start ();
+;?>
+
+
 <?php // Connexion à la base de données
 $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION)); ?>
 
@@ -29,15 +35,8 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     <link rel="stylesheet" href="css/header.css">
     <link rel="stylesheet" href="css/artistes.css">
     <link rel="stylesheet" href="css/footer.css">
+    <link rel="stylesheet" href="css/commi_admin.css">
     
-    <style>
-        .espace{
-            width: 5%;
-        }
-        article{
-            transform: translateX(320%);
-        }
-    </style>
     
    <title>THE artist's</title>
     <script type="text/javascript">
@@ -47,11 +46,19 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     </script> <!-- empecher le clic droit-->
 </head>
 <body>
+ 
+ <a id="button"></a>
   
+<?php include 'include/header_membre.php';?>
 
-<a id="button"></a>
-
-<?php include 'include/header.php';?>
+       <?php
+    
+        $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
+         $sql = 'SELECT COUNT(*) AS nb FROM contact'; 
+         $result = $pdo->query($sql);
+         $columns = $result->fetch(); $nb = $columns['nb']; echo 'Il y a '.$nb.' messages en base.';
+    
+    ?>
 
 
     <div class="container">
@@ -59,79 +66,39 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     
  <?php 
     // Requêtes SQL pour récupérer toutes les lignes d'une table de la base de données
-    $result = $pdo->query("SELECT * FROM profile LIMIT 3");
+    $result = $pdo->query("SELECT * FROM contact");
     // Boucle pour lister les résultats de la requête précédente
     while($profil = $result->fetch(PDO::FETCH_ASSOC)){ ?>
-      
-
-           <div class="JeNeSaisPas">
-                <div class="card-container " onClick="">
-                  <div class="card-front card" onClick="">
-                    <div class="side-a"></div>
-                    <div class="side-b"></div>
-                  </div>
-
-                  <div class="card-back card" onClick="">
-                    <div class="side-c">
-                        <a href="profil.php?id=<?php echo $profil['id']; ?>">
-                            <img class="side-c" src="images/totoro.jpg" alt="photo de fond de carte">
-<!--
-                                <?php 
-                                        $dos = "images_/min";
-                                        $dir = opendir($dos);
-                                        while($files = readdir($dir)){
-                                            $allow_ext = array("jpg", "png", "gif");
-                                            $ext =  strtolower(substr($files, -3));
-                                            if(in_array($ext, $allow_ext)){
-                                                ?>
-                                                    <img src="images_/min/<?php echo $files; ?>" />
-
-                                                <?php   
-                                            }
-                                        }
-                                ;?>
--->
-                        </a>
-                    </div>
-                  </div>
-
-                  <div class="instructions">
-                    <?php echo $profil["nom"]; ?> &gt;&gt;
-                  </div>
-            </div>      
-            <br><br>      
-  
-        </div>
-        
-        <div class="espace">
-            
-        </div>
-        
-    
+    <div class="col-4">
+       <a href="?delete=<?php echo $profil['id'] ?> "><i class="fas fa-trash-alt poubelle"></i></a>
+        Nom et Prénom: <?php echo $profil["nom"]; ?><br>
+        Mail: <?php echo $profil["mail"]; ?><br>
+        Téléphone: <?php echo $profil["tel"]; ?><br>
+        Sujet: <?php echo $profil["sujet"]; ?><br>
+        Message: <?php echo $profil["message"]; ?><br>
+    </div>
 
 
- 
+ <br><br>
       
 <?php } ?>
 
 
-
+        </div>
     </div>
-    </div>
-
-<br>
-        
-
     
-<article>
- <a href="ToutLesArtistes.php">
-    <div>
-        <span>Voir plus</span>
-        <span>D'artistes</span>
-    </div>
- </a>
+            <?php // Connexion à la base de données
 
-</article>
+
+// Si un paramêtre d'URL delete a été passé (Ex : localhost/article.php?delete=3)
+if(isset($_GET["delete"])) {
+  // Requêtes SQL qui supprime une ligne en base en lui passant l'id de l'article
+  $result = $pdo->prepare('DELETE FROM contact WHERE id = :id');
+  // On execute la requête en précisant que l'ID est celui passé en URL
+  $result->execute(array(
+      'id' => $_GET["delete"]
+  ));
+} ?>   
 
 <br><br>
 

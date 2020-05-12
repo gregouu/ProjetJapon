@@ -34,22 +34,7 @@ if(!empty($_FILES)){
        <input type="file" name="img"/>
        <input type="submit" name="Envoyer"/>
    </form>  
-   
-     <?php 
-    $dos = "images_/min";
-    $dir = opendir($dos);
-    while($files = readdir($dir)){
-        $allow_ext = array("jpg", "png", "gif");
-        $ext =  strtolower(substr($files, -3));
-        if(in_array($ext, $allow_ext)){
-            ?>
-                <img src="images_/min/<?php echo $files; ?>" />
-                
-            <?php   
-        }
-    }
-    ;?>
-       
+
            
 </body>
 </html>

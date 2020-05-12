@@ -184,15 +184,19 @@ if(!empty($_FILES)){
     ?>
    
    <center>
-       <a href="membre/commi_admin.php"><div class="commi">Voir les commissions</div></a>
+       <a href="membre_commi_admin.php"><div class="commi">Voir les commissions</div></a>
    </center>   
       <br>
     <center>
-       <a href="membre/contact_admin.php"><div class="commi">Voir les messages</div></a>
+       <a href="membre_contact_admin.php"><div class="commi">Voir les messages</div></a>
    </center>   
    <br>
       <center>
-       <a href="membre/ToutLesArtistes.php"><div class="commi">Gestion des articles</div></a>
+       <a href="membre_ToutLesArtistes.php"><div class="commi">Gestion des articles</div></a>
+   </center>   
+     <br>
+      <center>
+       <a href="membre_propos_admin.php"><div class="commi">Gestion A Propos</div></a>
    </center>
     
 

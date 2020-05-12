@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,7 +14,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!--responsive header-->
     
 
-    <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--la loupe-->
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
     <link rel="icon" type="image/png" href="images/favicon.png" />

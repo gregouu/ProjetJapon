@@ -1,7 +1,4 @@
 
-<?php
-session_start ();
-;?>
 
 
 <?php // Connexion à la base de données
@@ -12,6 +9,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
 <html lang="fr" xmlns:og="http://ogp.me/ns#" xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="UTF-8">
+    
     <meta property="og:url" content="https://www.projetjapon.com"> <!--opne graph-->
     <meta property="og:title" content="THE artist's">
     <meta property="og:description" content="Venez admierer des travaux plus qu'incroyable de plusieurs artistes">
@@ -32,60 +30,59 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/artistes.css">
-    <link rel="stylesheet" href="../css/footer.css">
-    <link rel="stylesheet" href="../css/commi_admin.css">
+    <link rel="stylesheet" href="css/header.css">   
+    <link rel="stylesheet" href="css/footer.css">
+        
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,800italic,400,700,800' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Raleway:400,700,300,200,100,900' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Amatic+SC:400,700' rel='stylesheet' type='text/css'>
+    <link href="css/aPropos.css" rel='stylesheet'>
     
-    
-   <title>THE artist's</title>
-    <script type="text/javascript">
+     <script type="text/javascript">
     //<!--
         document.oncontextmenu = new Function("return false");
     //-->
     </script> <!-- empecher le clic droit-->
+
+
+
+    <title>A Propos</title>
 </head>
 <body>
- 
- <a id="button"></a>
-  
-<?php include '../include/header_membre.php';?>
 
-       <?php
-    
-        $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', array(PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION));
-         $sql = 'SELECT COUNT(*) AS nb FROM contact'; 
-         $result = $pdo->query($sql);
-         $columns = $result->fetch(); $nb = $columns['nb']; echo 'Il y a '.$nb.' messages en base.';
-    
-    ?>
+   
+<a id="button"></a>
+
+<?php include 'include/header.php';?>
 
 
-    <div class="container">
-        <div class="row">
-    
- <?php 
+<?php 
     // Requêtes SQL pour récupérer toutes les lignes d'une table de la base de données
-    $result = $pdo->query("SELECT * FROM contact");
+    $result = $pdo->query("SELECT * FROM about");
     // Boucle pour lister les résultats de la requête précédente
     while($profil = $result->fetch(PDO::FETCH_ASSOC)){ ?>
-    
-        Nom et Prénom: <?php echo $profil["nom"]; ?><br>
-        Mail: <?php echo $profil["mail"]; ?><br>
-        Téléphone: <?php echo $profil["tel"]; ?><br>
-        Sujet: <?php echo $profil["sujet"]; ?><br>
-        Message: <?php echo $profil["message"]; ?><br>
+        
 
-
- <br><br>
-      
-<?php } ?>
-
-
-        </div>
+<ul id="categories" class="clr">
+  <li class="pusher"></li>
+	<li>
+      <div>
+        <img src="<?php echo $about["photo"];?>" alt="photo aléatoire"/>
+        <h1><?php echo $about["titre"];?></h1>
+        <p><?php echo $about["message"];?></p>
     </div>
+  </li>
+  </ul>
+            
+                    <?php } ?>
 
-<br><br>
 
-<?php include '../include/footer.php';?>
 
+
+
+
+
+<?php include 'include/footer.php';?>
+    
+</body>
+</html>

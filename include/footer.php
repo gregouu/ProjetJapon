@@ -15,7 +15,8 @@
           <div class="col-xs-6 col-md-3">
             <h6 class="titreFooter">Quick Links</h6>
             <ul class="footer-links">
-              <li><a href="about.php">About</a></li>
+              <li><a href="aPropos.php">About</a></li>
+              <li><a href="galerie.php">Galerie</a></li>
               <li><a href="contact.php">Contact</a></li>
               <li><a href="connexion.php">Connexion</a></li>
               <li><a href="mentionLegal.php" target="_blank">Mention légale</a></li>

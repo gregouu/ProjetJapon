@@ -21,12 +21,12 @@ session_start ();
     <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--la loupe-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/index.css">
     <title>THE artist's</title>
     <script type="text/javascript">
     //<!--
@@ -41,7 +41,7 @@ session_start ();
 
 <a id="button"></a>
 
-<?php include'../include/header_membre.php';?>
+<?php include'include/header_membre.php';?>
 
 <div class="quote">
   <span class="left">❝</span>

@@ -26,15 +26,15 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
     <script src="https://kit.fontawesome.com/a076d05399.js"></script><!--la loupe-->
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     
-    <link rel="icon" type="image/png" href="../images/favicon.png" />
+    <link rel="icon" type="image/png" href="images/favicon.png" />
     
     <script src="https://kit.fontawesome.com/ebfafc2eb8.js" crossorigin="anonymous"></script>
     
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     
-    <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/artistes.css">
-    <link rel="stylesheet" href="../css/footer.css">
+    <link rel="stylesheet" href="css/header.css">
+    <link rel="stylesheet" href="css/artistes.css">
+    <link rel="stylesheet" href="css/footer.css">
     
     <style>
         .espace{
@@ -99,7 +99,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
 
 <a id="button"></a>
 
-<?php include '../include/header_membre.php';?>
+<?php include 'include/header_membre.php';?>
 
 
     <div class="container">
@@ -123,9 +123,9 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
 
                   <div class="card-back card" onClick="">
                     <div class="side-c">
-                        <a href="../membre/profil.php?id=<?php echo $profil['id']; ?>">
+                        <a href="membre_profil.php?id=<?php echo $profil['id']; ?>">
                            
-                            <img class="side-c" src="../images/totoro.jpg" alt="photo de fond de carte">
+                            <img class="side-c" src="images/totoro.jpg" alt="photo de fond de carte">
                         </a>
                     </div>
                   </div>
@@ -164,5 +164,5 @@ if(isset($_GET["delete"])) {
 
 <br><br>
 
-<?php include '../include/footer.php';?>
+<?php include 'include/footer.php';?>
 
