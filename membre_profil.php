@@ -112,7 +112,7 @@ $pdo = new PDO('mysql:host=localhost;dbname=zartiste;charset=utf8', 'root', '', 
                             <br>
                             <p class="description"><?php echo $profile['description']; ?></p>
                             <br>
-                            <a href="../membre/comission.php" target="_blank"><div class="com"><p>Commission</p></div></a>
+                            <a href="membre_comission.php" target="_blank"><div class="com"><p>Commission</p></div></a>
                         </div>
 
 

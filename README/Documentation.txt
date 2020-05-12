@@ -1,0 +1,32 @@
+Explication des pages: 
+
+
+-Index: page d'accueil
+
+-About: il s'agit d'une page qui me présente, qui présente le site, d'où il est venu etc
+Sous forme d'hexagone, l'information se lit grace a un HOVER. Ils sont généré a la page admin. 
+
+-Artistes: Nous y trouvons plusieurs div qui, avec de css donne l'impression, apres un HOVER, qu'un livre s'ouvre. L'image est la même pour chacun: un totoro. 
+Sous chaque "livre" est marquer le nom d'un artiste. Le nom, comme le "livre" sont générés en page admin 
+
+Il y en a 3 ramdom et un bouton 'voir plus d'artiste' est présent.
+
+-Galerie: C'est une page genere en admin. Ce ne sont pas des url mais bien des import d'images.
+
+-Contact nous: formulaire de contact qui se lit en page admin. Les champs sont verifier en JS
+
+-Connexion: possibilite soit de s'incrire soit de se connecté. Si c'est le deuxieme choix, et que vous avez des indentifiant et mot de passse correct, vous serez rediriger ver la page 'admin'.
+
+-Profile: a gauche: photo, descritpion nom et reseaux sociaux de l'artiste, generer grace a un formulaire. 
+Sous ceci, ce trouve le bouton de commission, où il est possible grace a un formulaire, de presenter une commisssion, le formulaire se lit en page admin. 
+a droite: une arriver prochaine, non demande, a l'aide d'un autre formulaire, l'apparition des oeuvres de chaque artistes.
+
+-Admin: On tombe, directement sur deux formulaire, celui de droite ne sert pas encore, celui de gauche est pour la page profile et artiste
+En bas à gauche, même 'pitoyable', nous retrouvons notre Dashbord et le bouton de deconnexion, nous amenant en page de connexion
+Et au centre, on retrouve les differents gestionnaire et reception des messages vu jusqu'à la 
+
+
+
+
+
+Chaque page comporte, une navigation, un footer et une barre de recherche operationnel. Et tout les formulaires sont verifier au js. 

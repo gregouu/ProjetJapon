@@ -1,0 +1,7 @@
+- Dans mes lignes de codes, nous ponvons retrouver certaine ligne destiner a l'import d'image, pas encore totalement mis en place 
+
+- Sur la page profile, l'apparition prochaine de l'oeuvre de l'artiste
+
+- Dans mon dossier, il y a les fichier de la page 404, mais pour le moment je n'ai pas compris où mettre le fichier '.htaccess' 
+
+- Le multilingue est pret, je dois juste l'inséré dans les pages
